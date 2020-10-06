@@ -1,6 +1,7 @@
 package org.launchcode.spaday.controllers;
 
 import org.launchcode.spaday.models.Client;
+import org.launchcode.spaday.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,6 @@ public class SpaDayController {
 
     @PostMapping
     public String spaMenu(@RequestParam String skintype, @RequestParam String manipedi, Model model) {
-
         Client newClient = new Client(skintype, manipedi);
         newClient.setAppropriateFacials(skintype);
         model.addAttribute("client" , newClient);
